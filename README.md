@@ -11,3 +11,17 @@ Intall dependencies:
 To start app: 
 
 `npm run start`
+
+Install mongodb
+
+`brew tap mongodb/brew`
+
+`brew install mongodb-community@4.2`
+
+run mongodb on mac
+
+`brew services start mongodb-community@4.2`
+
+to verify mondo is running:
+
+`ps aux | grep -v grep | grep mongod`

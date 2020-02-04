@@ -2,22 +2,26 @@
 const mongoose = require('mongoose');
 const schema = mongoose.Schema;
 
-let taskSchema = new schema({
-    name: {
+let commandSchema = new schema({
+    description: {
         type: String,
-        required: 'Enter the name of the task'
+        required: 'Enter description of command'
+    },
+    command: {
+        type: String,
+        required: "Enter the command"
     },
     created_date: {
         type: Date,
         default: Date.now
     },
-    status: {
+    technology: {
         type: [{
             type: String,
-            enum: ['pending', 'in-progress', 'done']
+            enum: ['unix', 'docker', 'kubernetes', 'gauge', 'java', 'shell', 'python', 'javascript', 'git']
         }],
-        default: ['pending']
+        default: ['unix']
     }
 });
 
-module.exports = mongoose.model('Tasks', taskSchema);
+module.exports = mongoose.model('commands', commandSchema);
