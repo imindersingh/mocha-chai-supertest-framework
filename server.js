@@ -1,20 +1,21 @@
 const express = require('express'),
   app = express(),
-  port = process.env.PORT || 3001,
+  port = process.env.PORT || 8080,
   mongoose = require('mongoose'),
-  Task = require('./api/models/model'), //created model loading here
+  Task = require('./api/models/model'),
   bodyParser = require('body-parser');
   
-// mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/commandsDb', {useNewUrlParser : true, useUnifiedTopology : true}); 
+mongoose.connect('mongodb://mongo:27017/db', {useNewUrlParser : true, useUnifiedTopology : true}); 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const routes = require('./api/routes/routes'); //importing route
-routes(app); //register the route
+const routes = require('./api/routes/routes');
+routes(app);
 
 app.listen(port);
 
 console.log('Commands API starting on localhost:'+port);
+
+module.exports = app;

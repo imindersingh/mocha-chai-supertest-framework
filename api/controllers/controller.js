@@ -29,12 +29,6 @@ exports.getCommand = function(req, res) {
   });
 };
 
-// exports.getAllCommandsByTech = function(req, res) {
-//   const match = {}
-//   if (req.)
-
-// };
-
 exports.updateCommand = function(req, res) {
   commandModel.findOneAndUpdate({_id: req.params.commandId}, req.body, {new: true}, function(err, command) {
     if (err)
