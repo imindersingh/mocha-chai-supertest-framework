@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Node App</title>
+</head>
+
+<body>
+  <h1>Node App</h1>
+  <form method="post" action="/commands">
+    <label for="description">Description</label>
+    <input type="text" name="description">
+    <label for="command">Command</label>
+    <input type="text" name="command">
+    <label for="technology">Technology</label>
+    <input type="text" name="technology">
+    <input type="submit" value="Add">
+  </form>
+  <h4>Commands:</h4>
+  <ul>
+    <% command.forEach(function(c) { %>
+        <li><%= c.description %> - <%= c.command %></li>
+    <% }); %>
+</ul>
+</body>
+</html>
