@@ -8,13 +8,23 @@
 <body>
   <h1>Node App</h1>
   <form method="post" action="/commands">
-    <label for="description">Description</label>
-    <input type="text" name="description">
-    <label for="command">Command</label>
-    <input type="text" name="command">
-    <label for="technology">Technology</label>
-    <input type="text" name="technology">
-    <input type="submit" value="Add">
+    <label for="description">Description:</label><br>
+    <input type="text" name="description"><br><br>
+    <label for="command">Command:</label><br>
+    <input type="text" name="command"><br><br>
+    <label for="technology">Technology:</label><br>
+    <select id="technology">
+        <option value="volvo">unix</option>
+        <option value="saab">docker</option>
+        <option value="fiat">kubernetes</option>
+        <option value="audi">gauge</option>
+        <option value="audi">java</option>
+        <option value="audi">shell</option>
+        <option value="audi">python</option>
+        <option value="audi">javascript</option>
+        <option value="audi">git</option>
+      </select><br><br>
+    <input type="submit" value="Submit">
   </form>
   <h4>Commands:</h4>
   <ul>
