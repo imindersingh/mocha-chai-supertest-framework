@@ -16,7 +16,7 @@ This is a simple react-node app which allows you to POST, PUT, GET and DELETE co
 
 This app can be installed by the following commands or running in docker
 
-Intall dependencies:
+Install dependencies:
 
 `npm install`
 
