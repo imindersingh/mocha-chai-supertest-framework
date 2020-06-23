@@ -4,20 +4,29 @@ var mongoose = require('mongoose'),
 commandModel = mongoose.model('commands');
 
 exports.getAllCommands = function(req, res) {
-  let technology = req.query.technology;
-  commandModel.find({technology: technology}, function(err, command) {
+  var query = req.query.technology === undefined ? {} : {technology : req.query.technology};
+  console.log(query);
+  commandModel.find(query, function(err, command) {
     if (err)
       res.send(err);
     res.json(command);
   });
-};  
+}; 
+
+// exports.getAllCommandsByTechnology = function(req, res) {
+//   commandModel.findOne({technology : req.query.technology}, function(err, command) {
+//     if (err)
+//       res.send(err);
+//     res.json(command);
+//   }).exec();
+// }; 
 
 exports.createCommand = function(req, res) {
   var newCommand = new commandModel(req.body);
   newCommand.save(function(err, command) {
     if (err)
       res.send(err);
-    res.json(command);
+      res.json(command);
   });
 };
 

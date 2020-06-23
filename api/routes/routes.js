@@ -4,6 +4,7 @@ module.exports = function(app) {
 
   app.route('/commands')
     .get(commandsController.getAllCommands)
+    // .get(commandsController.getAllCommandsByTechnology)
     .post(commandsController.createCommand);
 
   app.route('/command/:commandId')
